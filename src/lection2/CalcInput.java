@@ -28,7 +28,7 @@ public class CalcInput {
                 b = scanIn.nextInt();
                 result = calc.calculate(a, b, operator);
             } catch (InputMismatchException e2){
-                System.out.println("Incorrect input");
+                System.out.println("Incorrect input, only integers are available.");
             }
 //            catch (NoSuchElementException e2){
 //                System.out.println("Incorrect input");
