@@ -1,7 +1,7 @@
 package lection1.volume;
 
 public enum Metal {
-    Steel(10000),
+    Steel(0),
     Silumine(2000),
     Bronze(9000),
     Gold(11000),
