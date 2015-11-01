@@ -1,14 +1,13 @@
 package lection3;
 
-import lection3.interfaces.Occupation;
-
-/**
- * Created by order on 28.10.15.
- */
 public class CEO extends Manager{
+    public CEO() {
+        this("Endy", "Chief Executive Officer", 3000, "Garvard");
+    }
 
-//    private Occupation del = null;
-
+    public CEO(String name, String role, int salary, String graduation) {
+        super(name, role, salary, graduation);
+    }
 
     @Override
     public void drink() {

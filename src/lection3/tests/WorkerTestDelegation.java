@@ -1,27 +1,13 @@
-package lection3;
+package lection3.tests;
 
-import lection3.interfaces.BasicWork;
-import lection3.interfaces.Occupation;
+import lection3.CEO;
+import lection3.Engineer;
+import lection3.Manager;
+import lection3.Worker;
 
-/**
- * Created by order on 28.10.15.
- */
-public class WorkerTest {
-    public static void main(String [] args){
-//        GeneralWorker simpleWorker = new Worker();
-//        GeneralWorker simpleEngineer = new Engineer();
-//        GeneralWorker manager = new Manager();
-//        GeneralWorker ceo = new CEO();
-//
-//        BasicWork[] workers = new BasicWork[4];
-//        workers[0] = simpleWorker;
-//        workers[1] = simpleEngineer;
-//        workers[2] = manager;
-//        workers[3] = ceo;
-//        for (BasicWork work: workers){
-//            work.clean();
-//        }
+public class WorkerTestDelegation {
 
+    public static void main(String[] args){
         Worker worOc = new Worker();
         Engineer eng = new Engineer();
         Manager mang = new Manager();
@@ -38,13 +24,13 @@ public class WorkerTest {
             e.printStackTrace();
         }
         System.out.println();
+
         eng.delegateWork(mang);
         mang.getOccupation().executeWork();
-
         System.out.println();
+
         ceo2.delegateWork(worOc);
         worOc.getOccupation().executeWork();
-
         System.out.println();
 
         try {
@@ -61,7 +47,5 @@ public class WorkerTest {
 //        mang.delegateWork(eng);
 //        ceo2.delegateWork(worOc);
         System.out.println();
-
-
     }
 }
