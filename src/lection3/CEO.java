@@ -28,7 +28,11 @@ public class CEO extends Manager{
 
     @Override
     public void executeWork() {
-        super.executeWork();
-        System.out.println("Chief Officer at this facility!");
+        if (getOccupation() != null){
+            getOccupation().executeWork();
+        }else {
+            super.executeWork();
+            System.out.println(getName() + " Chief Officer at this facility!");
+        }
     }
 }

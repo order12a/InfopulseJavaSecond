@@ -1,8 +1,9 @@
 package lection3;
 
+import lection3.interfaces.AgileMangement;
 import lection3.interfaces.Occupation;
 
-public class Manager extends GeneralWorker implements Occupation {
+public class Manager extends GeneralWorker implements Occupation, AgileMangement {
     public String graduation;
 
     public Manager(){
@@ -33,7 +34,11 @@ public class Manager extends GeneralWorker implements Occupation {
 
     @Override
     public void executeWork() {
-        System.out.println("Managing work.");
+        if(getOccupation() != null){
+            getOccupation().executeWork();
+        }else {
+            System.out.println("Managing work.");
+        }
     }
 
     public void delegateWork(GeneralWorker worker) {
@@ -45,4 +50,8 @@ public class Manager extends GeneralWorker implements Occupation {
         System.out.println("No manual work! Only delegation of work for other people.");
     }
 
+    @Override
+    public void planWorkWithAgile() {
+        System.out.println("Planning work according agile principles.");
+    }
 }

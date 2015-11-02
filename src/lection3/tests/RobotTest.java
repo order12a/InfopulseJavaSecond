@@ -18,5 +18,7 @@ public class RobotTest {
         robot.replaceWorker(engineer);
         robot.replaceWorker(manager);
         robot.replaceWorker(ceo);
+        robot.replaceWorker(worker1);
+        robot.replaceWorker(engineer1);
     }
 }

@@ -1,8 +1,9 @@
 package lection3;
 
 import lection3.interfaces.Occupation;
+import lection3.interfaces.TurnerWork;
 
-public class Engineer extends GeneralWorker implements Occupation {
+public class Engineer extends GeneralWorker implements Occupation, TurnerWork {
     private String level;
 
     public Engineer(){
@@ -33,7 +34,11 @@ public class Engineer extends GeneralWorker implements Occupation {
 
     @Override
     public void executeWork() {
-        System.out.println("Engineering at this factory.");
+        if (getOccupation() != null){
+            getOccupation().executeWork();
+        }else {
+            executeTurnerWork();
+        }
     }
 
     @Override
@@ -42,7 +47,20 @@ public class Engineer extends GeneralWorker implements Occupation {
     }
 
     @Override
+    public void measure(TurnerInstruments instrument) {
+        System.out.println("Measuring with instrument " + instrument.name());
+    }
+
+    @Override
     public int compareTo(GeneralWorker worker) {
         return Integer.compare(getSalary(), worker.getSalary());
+    }
+
+    @Override
+    public void executeTurnerWork() {
+        System.out.println("Executing turner work using instruments: ");
+        for (TurnerInstruments instrument: TurnerInstruments.values()){
+            System.out.println(instrument.toString());
+        }
     }
 }
