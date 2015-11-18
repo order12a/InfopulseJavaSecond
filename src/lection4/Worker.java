@@ -92,8 +92,8 @@ public class Worker extends Employee{
             this.physicKnowledge = physicKnowledge.getPhysicKnowledge();
         }
         public Knowledge(Knowledge knowledge){
-            this.generalKnowledge = knowledge.getGeneralKnowledge();
-            this.physicKnowledge = knowledge.getPhysicKnowledge();
+            this.setGeneralKnowledge(knowledge.getGeneralKnowledge());
+            this.setPhysicKnowledge(knowledge.getPhysicKnowledge());
         }
         public String[] getPhysicKnowledge() {
             return physicKnowledge;
