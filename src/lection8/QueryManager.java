@@ -49,10 +49,11 @@ public class QueryManager {
         }catch (SQLException ex){
             ex.printStackTrace();
         }
+
         return  resultSet;
     }
 
-    public List<String> getColumnDataString(ResultSet resultSet, String columnName){
+    public List<String> getColumnDataStringList(ResultSet resultSet, String columnName){
         List<String> columnData = new ArrayList<>(10);
         if (!(columnName.isEmpty())){
             try{

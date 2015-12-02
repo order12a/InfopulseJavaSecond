@@ -11,7 +11,7 @@ public class MainSQL {
 //        QueryManager queryManager = new QueryManager();
 //        Connection connection = queryManager.setUpConnection();
 //        ResultSet resultSet = queryManager.executeStatement(connection, firstExercise);
-//        List<String> names = queryManager.getColumnDataString(resultSet, "customerName");
+//        List<String> names = queryManager.getColumnDataStringList(resultSet, "customerName");
 //        for (String name: names){
 //            System.out.println("Customer first name is - " + name);
 //        }
