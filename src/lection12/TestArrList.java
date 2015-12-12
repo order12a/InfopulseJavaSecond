@@ -37,6 +37,10 @@ public class TestArrList {
         System.out.println("W Size - " + workers.getSize());
         System.out.println(workers.toString());
 
-        workers.addCollection(instrumentArrayListSample);
+        System.out.println(workers.getElement(2));
+        workers.removeElementByIndex(2);
+        System.out.println(workers.toString());
+        System.out.println("W Size - " + workers.getSize());
+        System.out.println(workers.getElement(2));
     }
 }

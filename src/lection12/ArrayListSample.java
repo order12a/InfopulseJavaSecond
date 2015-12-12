@@ -72,10 +72,33 @@ public class ArrayListSample <T> {
     }
 
     public void addCollection(ArrayListSample<? extends T> listSample){
-        System.out.println("listSample size - " + listSample.getSize());
         for (int i = 0; i < listSample.getSize(); i++){
             add(listSample.getElement(i));
         }
     }
 
+    public T removeElementByIndex(int index){
+
+        T element = getElement(index);
+        initedArrList[index] = null;
+        Object[] tempBefore =  new Object[index];
+//        tempBefore = System.arraycopy((T[])initedArrList, 0, tempBefore, 0, index);
+        for (int i = 0; i < initedArrList.length - 1; i++){
+            int j = i;
+//            System.out.println(getElement(i).toString());
+            if (getElement(i) == null){
+//                System.arraycopy(initedArrList, initedArrList, );
+                replace(getElement(i + 1), i);
+                j = i + 1;
+            }else {
+                replace(getElement(j), i);
+            }
+        }
+        size--;
+        return element;
+    }
+
+    public void replace(T element, int index){
+        initedArrList[index] = element;
+    }
 }
