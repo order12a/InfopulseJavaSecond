@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/MobileTaxes"
+        xmlns:tns="http://www.example.com/MobileTaxes">
+    <element name="tax_list" type="tns:tax_list"/>
+    <complexType name="tax_list">
+        <sequence>
+            <element type="tns:name" name="name" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="name">
+       <sequence>
+           <element name="operator_name" type="string"/>
+           <element name="payroll" type="double" maxOccurs="1" minOccurs="1"/>
+           <element name="call_price" type="tns:call_prices" maxOccurs="1" minOccurs="1"/>
+           <element name="sms_price" type="double" maxOccurs="1" minOccurs="1"/>
+           <element name="params" type="tns:params"/>
+       </sequence>
+    </complexType>
+
+    <complexType name="call_prices">
+        <sequence>
+            <element name="in_network" type="double" maxOccurs="1" minOccurs="1"/>
+            <element name="out_network" type="double" maxOccurs="1" minOccurs="1"/>
+            <element name="office_stations" type="double" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="params">
+        <sequence>
+            <element name="number" type="double" maxOccurs="1" minOccurs="1"/>
+            <element name="taxification" type="string" maxOccurs="1" minOccurs="0"/>
+            <element name="conn_tax" type="double" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <simpleType name="taxification">
+        <restriction base="string">
+            <pattern value="12sec|minute" />
+        </restriction>
+    </simpleType>
+</schema>

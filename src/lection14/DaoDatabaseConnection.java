@@ -56,8 +56,8 @@ public class DaoDatabaseConnection {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        for (ProductLine productLine: productLines){
-            System.out.println(productLine.toString());
-        }
+//        for (ProductLine productLine: productLines){
+//            System.out.println(productLine.toString());
+//        }
     }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/MobileTaxes"
+        xmlns:tns="http://www.example.com/MobileTaxes">
+  <element name="tax_list" type="tns:tax_list"/>
+  <complexType name="nameType">
+    <sequence>
+      <element type="string" name="operator_name"/>
+      <element type="double" name="payroll"/>
+      <element type="tns:call_pricesType" name="call_prices"/>
+      <element type="string" name="sms_price"/>
+      <element type="tns:paramsType" name="params"/>
+    </sequence>
+  </complexType>
+  <complexType name="tax_list">
+    <sequence>
+      <element type="tns:nameType" name="name" maxOccurs="unbounded" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="call_pricesType">
+    <sequence>
+      <element name="in_network">
+        <simpleType>
+          <restriction base="string">
+          </restriction>
+        </simpleType>
+      </element>
+      <element type="string" name="out_network"/>
+      <element type="string" name="office_stations"/>
+    </sequence>
+  </complexType>
+  <complexType name="paramsType">
+    <sequence>
+      <element type="tns:string" name="number"/>
+      <element name="taxification">
+        <simpleType>
+          <restriction base="string">
+            <enumeration value="minute"/>
+            <enumeration value="12sec"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element type="tns:double" name="conn_tax"/>
+    </sequence>
+  </complexType>
+  <complexType name="string"></complexType>
+  <complexType name="double"></complexType>
+</schema>
