@@ -6,6 +6,10 @@ public class CallPrice {
     private double outNetwork;
     private double officeStations;
 
+    public CallPrice(){
+
+    }
+
     public CallPrice(double inNetwork, double outNetwork, double officeStations) {
         this.inNetwork = inNetwork;
         this.outNetwork = outNetwork;

@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
+import java.util.List;
 
 
 public class XMLParser {
@@ -23,6 +24,7 @@ public class XMLParser {
 
     static DOMParser domParser;
     static Document domDocument;
+    private static List<Name> operators;
 
     public static void readDocumentFromXmlDOMFile(String pathToFile) {
 
@@ -92,6 +94,8 @@ public class XMLParser {
                 NodeList nodes = node.getChildNodes();
                 if (nodes != null) {
                     for (int i = 0; i < nodes.getLength(); i++) {
+
+
                         printNode(nodes.item(i), "");
                     }
                 }

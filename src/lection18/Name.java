@@ -7,6 +7,10 @@ public class Name {
     private CallPrice callPrice;
     private Params params;
 
+    public Name(){
+
+    }
+
     public Name(String operatorName, double payroll, double smsPrice, CallPrice callPrice, Params params) {
         this.operatorName = operatorName;
         this.payroll = payroll;

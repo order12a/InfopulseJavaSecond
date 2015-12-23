@@ -5,6 +5,10 @@ public class Params {
     private String taxification;
     private double connTax;
 
+    public Params(){
+
+    }
+
     public Params(double number, String taxification, double connTax) {
         this.number = number;
         this.taxification = taxification;
