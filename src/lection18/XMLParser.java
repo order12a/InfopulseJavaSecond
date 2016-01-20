@@ -84,6 +84,7 @@ public class XMLParser {
         // Print the document from the DOM tree
     }
 
+//    TODO Create method that map XML data to Operator class instance
     public static void printNode(Node node, String indent) {
 
         switch (node.getNodeType()) {
